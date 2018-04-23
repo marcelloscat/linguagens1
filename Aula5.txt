@@ -1,0 +1,109 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aula4;
+
+/**
+ *
+ * @author 16.01472-3
+ */
+public class Cliente {
+    private String nome;
+    private String sobrenome;
+    private String cpf;
+    private int idade;
+    
+    public void mudarCPF(String cpf){
+        if(validarCPF(cpf)){
+            this.cpf=cpf;}
+        else {
+            System.out.println("N foi possivel alterar o cpf");
+        }
+ 
+    }
+    public Cliente(String nome, String sobrenome, String cpf) {
+        this.saldo = saldo;
+        this.numeroConta = nConta;
+        this.cliente = new Cliente(nome, sobrenome, cpf)}
+    
+    public String getNome(){
+        return this.nome;}
+    
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aula4;
+
+
+public class Conta {
+    String numeroConta;
+    private float saldo;
+    Cliente titular;
+    public String visualzarSaldo(){
+        return Float.toString(this.saldo);
+    }
+    public double getSaldo(){
+        return this.saldo + this.limite}
+    
+    public void depositar(int valor){
+        this.saldo = this.saldo + valor;
+    }
+    public boolean sacar(int valor){
+        
+        if(this.saldo>=valor ){
+            this.saldo = this.saldo - valor;
+            return true;}
+        else return false;
+    }
+    public boolean trainsferirDinheiro(int valor, Conta destinatario){
+        boolean resp = false;
+        if(this.sacar(valor)){
+            destinatario.depositar(valor);
+            resp = true;}
+        return resp;
+    }
+    public Conta(String nConta){
+        this.saldo = 0;
+        this.numeroConta = nConta;
+        this.titular = new Cliente();
+        
+    }
+    public String getNumeroConta(){
+        return this.numeroConta;
+    }
+    
+    
+}
+
+/**
+ *
+ * @author 16.01472-3
+ */
+public class Aula4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+       Conta c1;
+       c1 = new Conta("11111", 145, "Bilu", "bilu", "11111");
+       Conta c2;
+       c2 = new Conta("2222");
+       c1.titular.cpf = "123";
+       System.out.println(c1.titular.cpf);
+       c1.saldo = 888882; 
+       c2.saldo = 111;
+       int valor = 30;
+       c1.visualzarSaldo();
+    }
+    
+}
+
